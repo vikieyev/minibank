@@ -30,9 +30,11 @@
 	Ket Transaksi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input name="TextKetTransaksi" style="height: 21px; width: 311px" type="text" /><br />
 	<br />
 	Neraca &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<select name="SelectJenisNeraca">
+	<select name="SelectJenisNeraca" style="width: 114px">
 	<option>Debet</option>
 	<option>Kredit</option>
+	<option>Transfer</option>
+
 	</select><br />
 	<br />
 	<input name="ButtonSave" type="submit" value="Simpan Data" />

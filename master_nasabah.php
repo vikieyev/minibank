@@ -26,7 +26,7 @@
 	<br />
 	Alamat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input name="alamat_nasabah" type="text" style="width: 420px"/><br />
 	<br />
-	Tgl lahir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" id="tgl_lahir" name="tgl_lahir_nasabah"/>
+	Tgl lahir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" id="tgl_lahir" name="tgl_lahir_nasabah" value='<?php echo date('Y-m-d');?>' />
 	<br />
 	<br />
 	Nama ibu kandung&nbsp;&nbsp;&nbsp; &nbsp;<input name="nama_ibu_kandung" type="text" style="width: 219px" /><br />
@@ -48,7 +48,7 @@
 		echo '<select name="jenis_program">';
 		while( $row = $result->fetch_assoc())
 		{
-			    echo '<option value="' . htmlspecialchars($row['nama_tabungan']) . '">' 
+			    echo '<option value="' . htmlspecialchars($row['kode_tabungan']) . '">' 
 		        . htmlspecialchars($row['nama_tabungan']) 
 		        . '</option>';
 		}

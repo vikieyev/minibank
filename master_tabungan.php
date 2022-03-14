@@ -29,7 +29,7 @@
 	<br />
 	Nama Program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input name="TextNamaTabungan" style="height: 21px; width: 311px" type="text" /><br />
 	<br />
-	Value &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Min. Setoran Awal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input name="TextSetoranMinimal" style="width: 213px" type="number" /><br />
 	<br />
 	<input name="ButtonSave" type="submit" value="Simpan Data" />
