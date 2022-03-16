@@ -14,8 +14,10 @@
 <title>Data Nasabah</title>
 </head>
 
-<body style="background-color: #999999">
-<p>DATA NASABAH</p>
+<body style="background-color: #999991">
+<h1>
+<p style="text-align:center">Buka Rekening Nasabah</p>
+</h1>
 
 <form method="post" action="">
 	Rek nasabah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  	<input name="kode_nasabah" type="text" />

@@ -19,13 +19,19 @@ body {
 
 h1 {
     margin: 0 0 8px 0;
-    font-size: 20px;
+    font-size: 28px;
     font-family: 'Helvetica Neue Light', 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif, Arial;
     font-weight: 300;
 }
 
 a {
     color: #00B7FF;
+}
+
+@media print {
+  .no-print {
+    visibility: hidden;
+  }
 }
 
 <style>

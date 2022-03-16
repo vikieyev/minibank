@@ -18,7 +18,10 @@
 
 <body>
 
-<p style="text-align:center" > Master Kode Transaksi </p>
+<body style="background-color: #999991">
+<h1>
+<p style="text-align:center">Master Kode Transaksi</p>
+</h1>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <form action="" method="post">

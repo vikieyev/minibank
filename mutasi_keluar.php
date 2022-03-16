@@ -15,8 +15,10 @@
 <title>Mutasi Keluar</title>
 </head>
 
-<body style="background-color: #999992">
-<p>Mutasi Keluar</p>
+<body style="background-color: #999991">
+<h1>
+<p style="text-align:center">Mutasi Keluar</p>
+</h1>
 
 <form method="post" action="">
 	Rek nasabah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -41,6 +43,31 @@
 		//echo '<input name="nama_nasabah" type="text">';
 		//echo '</input>';
 	?>
+	<input name="ButtonCeksaldoAsal" type="submit" value="Cek Saldo" />
+	<?php
+	if(isset($_POST["ButtonCeksaldoAsal"]))
+	{
+		include 'koneksi.php';
+	 
+		$no_rek = $_POST["select_nasabah"];
+				
+		$saldo_nasabah = 0;
+		$cek_saldo = mysqli_query($koneksi2,"select (ifnull(sum(kredit) - sum(debet),0)) as saldo  from data_transaksi dt where no_rek = '$no_rek' ");  
+		while( $row = $cek_saldo->fetch_assoc())
+		{
+			$saldo_nasabah = (int)$row['saldo'];
+			//echo $row;
+		}
+			//echo '<h1>';
+			echo " saldo rek : " ;
+			echo $no_rek;
+			echo " Rp."; 
+			echo $saldo_nasabah;
+			//echo '</h1>';
+
+	}	
+	?>
+
 
 	<br />
 	<br />
@@ -142,7 +169,7 @@ if(isset($_POST["ButtonSave"]))
 	
 	if($saldo_nasabah <= $nominal_int){
 			
-			echo '<script> alert("maaf saldo anda kurang");</script>';
+			echo '<script> alert("maaf saldo anda tidak cukup");</script>';
 			echo "saldo rek : " ;
 			echo $no_rek;
 			echo " Rp."; 
@@ -150,6 +177,8 @@ if(isset($_POST["ButtonSave"]))
 			
 			//echo '<script> saldo_kurang(); </script>';
 	}else{
+		
+			
 	
 			$input = mysqli_query($koneksi2,"INSERT INTO data_transaksi (no_rek,jenis_transaksi,debet,tgl_transaksi) VALUES ('$no_rek','$jenis_transaksi','$nominal','$tgl_transaksi')");  
 			
@@ -157,7 +186,7 @@ if(isset($_POST["ButtonSave"]))
 			if($input){
 				
 				echo '<script>alert("tambah data berhasil!!")</script>';
-				echo '<script>window.location.href="mutasi_masuk.php"</script>';   //membuat Link untuk kembali ke halaman tambah
+				echo '<script>window.location.href="mutasi_keluar.php"</script>';   //membuat Link untuk kembali ke halaman tambah
 				
 			}else{
 				echo mysqli_error();

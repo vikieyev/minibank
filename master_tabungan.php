@@ -18,8 +18,10 @@
 
 <body>
 
-<p style="text-align:center" > MASTER PROGRAM </p>
-<p>&nbsp;</p>
+<body style="background-color: #999991">
+<h1>
+<p style="text-align:center">Master Program</p>
+</h1>
 <p>&nbsp;</p>
 <form action="" method="post">
 	Kode Program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -29,8 +31,7 @@
 	<br />
 	Nama Program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input name="TextNamaTabungan" style="height: 21px; width: 311px" type="text" /><br />
 	<br />
-	Min. Setoran Awal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input name="TextSetoranMinimal" style="width: 213px" type="number" /><br />
+	Min. Setoran Awal &nbsp;<input name="TextSetoranMinimal" style="width: 213px" type="number" /><br />
 	<br />
 	<input name="ButtonSave" type="submit" value="Simpan Data" />
 <br />
