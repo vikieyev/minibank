@@ -12,12 +12,12 @@
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
-<title>Laporan Kas Masuk</title>
+<title>Jurnal Keluar Masuk</title>
 </head>
 
 <body style="background-color: #999991">
 <h1>
-<p style="text-align:center">Laporan Kas Masuk</p>
+<p style="text-align:center">Jurnal Keluar Masuk</p>
 </h1>
 <div class="no-print">
 
@@ -130,8 +130,9 @@ if(isset($_POST["ButtonSave"]))
 	
 	
 		
-			$total_query = mysqli_query($koneksi2,"select sum(a.kredit) as 'kas_masuk' from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'kredit' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");
-			$input = mysqli_query($koneksi2,"select a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.kredit,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and kredit > 0 and (b.jenis_neraca = 'kredit' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");    
+			$total_query_debet = mysqli_query($koneksi2,"select sum(a.debet) as 'kas_debet' from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");
+			$total_query_kredit = mysqli_query($koneksi2,"select sum(a.kredit) as 'kas_kredit' from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'kredit' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");
+			$input = mysqli_query($koneksi2,"select a.rek_tujuan,a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.debet,a.kredit,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");    
 			
 			//jika query input sukses
 			$nama_nasabah = "";
@@ -152,8 +153,11 @@ if(isset($_POST["ButtonSave"]))
 					$no_tlp_nasabah=$row['no_tlp_nasabah'];
 					
 				}
-				while ( $row2 = $total_query->fetch_assoc())  {
-					$total=$row2['kas_masuk'];
+				while ( $row2 = $total_query_debet->fetch_assoc())  {
+					$total_debet=$row2['kas_debet'];
+				}
+				while ( $row3 = $total_query_kredit->fetch_assoc())  {
+					$total_kredit=$row3['kas_kredit'];
 				}
 					echo '<h4>';
 					echo "No Rekening 	: ". $no_rek ;
@@ -179,8 +183,11 @@ if(isset($_POST["ButtonSave"]))
 					//echo '<br/>';
 					echo '<h1>';
 					echo '<p style="text-align:center">';
-					echo "Total Kas Masuk No Rek.". $no_rek ." = Rp. ";
-					echo number_format($total);
+					echo "Total Kredit = Rp.";
+					echo number_format($total_kredit);
+					echo "  Total Debet = Rp.";
+					echo number_format($total_debet);
+					
 					echo '</h1>';
 					//echo '<br/>';
 					
@@ -262,6 +269,12 @@ $result = $koneksi2->query("SELECT * FROM data_transaksi");
         			return formatNumberForDisplay(value) ;
     			}, 
             },
+            { name: "debet", type: "number", width: 12,
+            	itemTemplate: function(value) {
+        			return formatNumberForDisplay(value) ;
+    			}, 
+            },
+			{ name: "rek_tujuan", type: "text", width: 12 },
             { name: "tgl_transaksi", type: "text", width: 12 },
             { name: "id_transaksi", type: "text", width: 12 },
             { name: "ket_transaksi", type: "text", width: 12 },

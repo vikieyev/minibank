@@ -131,10 +131,14 @@ if(isset($_POST["ButtonSave"]))
 	
 		
 			$total_query = mysqli_query($koneksi2,"select sum(a.debet) as 'kas_keluar' from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");
-			$input = mysqli_query($koneksi2,"select a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.debet,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");    
+			$input = mysqli_query($koneksi2,"select a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.debet,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and debet > 0 and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");    
 			
 			//jika query input sukses
 			$nama_nasabah = "";
+			$jenis_program="";
+			$alamat_nasabah="";
+			$no_tlp_nasabah="";
+
 			if($input){
 				//Initialize array variable
   				$dbdata = array();
@@ -175,8 +179,8 @@ if(isset($_POST["ButtonSave"]))
 					//echo '<br/>';
 					echo '<h1>';
 					echo '<p style="text-align:center">';
-					echo "Total Kas Keluar No Rek.". $no_rek ." = Rp.";
-					echo $total;
+					echo "Total Kas Keluar No Rek.". $no_rek ." = Rp. ";
+					echo number_format($total);
 					echo '</h1>';
 					//echo '<br/>';
 					
@@ -185,7 +189,7 @@ if(isset($_POST["ButtonSave"]))
 				//echo '<script>window.location.href="mutasi_masuk.php"</script>';   //membuat Link untuk kembali ke halaman tambah
 				
 			}else{
-				echo mysqli_error();
+				//echo mysqli_error();
 				echo '<script>alert("proses data gagal!!")</script>';
 				//echo '<script>window.location.href="register.php"</script>';	//membuat Link untuk kembali ke halaman tambah
 				

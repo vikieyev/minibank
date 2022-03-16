@@ -14,9 +14,9 @@
 <p style="text-align:center">Master Data</p>
 </h1>
 <p>&nbsp;</p>
-<p>1. <a href="master_nasabah.php" target="_blank">nasabah</a></p>
-<p>2. <a href="master_tabungan.php" target="_blank">jenis program</a></p>
-<p>3. <a href="kode_transaksi.php" target="_blank">kode transaksi</a></p>
+<p style="text-align:center">1. <a href="master_nasabah.php" target="_blank">nasabah</a></p>
+<p style="text-align:center">2. <a href="master_tabungan.php" target="_blank">jenis program</a></p>
+<p style="text-align:center">3. <a href="kode_transaksi.php" target="_blank">kode transaksi</a></p>
 </body>
 
 </html>

@@ -17,7 +17,7 @@
 
 <body style="background-color: #999993">
 <h1>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Transfer</p>
+<p style="text-align:center">Transfer</p>
 </h1>
 <p>&nbsp;</p>
 
@@ -63,7 +63,7 @@
 			echo " saldo rek : " ;
 			echo $no_rek;
 			echo " Rp."; 
-			echo $saldo_nasabah;
+			echo number_format($saldo_nasabah);
 			//echo '</h1>';
 
 	}	
@@ -143,7 +143,7 @@
 			echo " saldo rek : " ;
 			echo $no_rek;
 			echo " Rp."; 
-			echo $saldo_nasabah;
+			echo number_format($saldo_nasabah);
 			//echo '</h1>';
 
 	}	

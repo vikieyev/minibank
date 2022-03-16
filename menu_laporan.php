@@ -15,9 +15,9 @@
 <p style="text-align:center">Menu Laporan</p>
 </h1>
 <p>&nbsp;</p>
-<p>1.<a href="laporan_kas_masuk.php" target="_blank">Laporan Kas Masuk</a></p>
-<p>2.<a href="laporan_kas_keluar.php" target="_blank">Laporan Kas Keluar</a></p>
-<p>3.<a href="laporan_jurnal.php" target="_blank">Jurnal Keluar Masuk</a></p>
+<p style="text-align:center">1.<a href="laporan_kas_masuk.php" target="_blank">Laporan Kas Masuk</a></p>
+<p style="text-align:center">2.<a href="laporan_kas_keluar.php" target="_blank">Laporan Kas Keluar</a></p>
+<p style="text-align:center">3.<a href="jurnal_keluar_masuk.php" target="_blank">Jurnal Keluar Masuk</a></p>
 
 <p>&nbsp;</p>
 
