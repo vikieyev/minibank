@@ -17,12 +17,12 @@
 
 <body style="background-color: #999991">
 <h1>
-<p style="text-align:center">Laporan Kas Masuk</p>
+<p style="text-align:center">LAPORAN KAS MASUK</p>
 </h1>
 <div class="no-print">
 
 <form method="post" action="">
-	Rek nasabah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	REK NASABAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 	<?php
 
 		//load data ke select
@@ -74,8 +74,8 @@
 			&nbsp;&nbsp;&nbsp;
 
 
-			Tgl Awal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_awal" name="tgl_awal" value='<?php echo date('Y-m-d');?>' />&nbsp;&nbsp;&nbsp;&nbsp;
-			Tgl Akhir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_akhir" name="tgl_akhir" value='<?php echo date('Y-m-d');?>' />
+			TGL AWAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_awal" name="tgl_awal" value='<?php echo date('Y-m-d');?>' />&nbsp;&nbsp;&nbsp;&nbsp;
+			TGL AKHIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_akhir" name="tgl_akhir" value='<?php echo date('Y-m-d');?>' />
 	
 	<!--
 	Rek Tujuan&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
@@ -106,7 +106,7 @@
 	
 			&nbsp;&nbsp;&nbsp;
 	
-			<input name="ButtonSave" type="submit" value="Proses" /> 
+			<input name="ButtonSave" type="submit" value="PROSES" /> 
 </form>
 </div>
 	<br />

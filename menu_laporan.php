@@ -12,12 +12,12 @@
 
 <body style="background-color: #999991">
 <h1>
-<p style="text-align:center">Menu Laporan</p>
+<p style="text-align:center">LAPORAN</p>
 </h1>
 <p>&nbsp;</p>
-<p style="text-align:center">1.<a href="laporan_kas_masuk.php" target="_blank">Laporan Kas Masuk</a></p>
-<p style="text-align:center">2.<a href="laporan_kas_keluar.php" target="_blank">Laporan Kas Keluar</a></p>
-<p style="text-align:center">3.<a href="jurnal_keluar_masuk.php" target="_blank">Jurnal Keluar Masuk</a></p>
+<p style="text-align:center"><a href="laporan_kas_masuk.php" target="_blank">LAPORAN KAS MASUK</a></p>
+<p style="text-align:center"><a href="laporan_kas_keluar.php" target="_blank">LAPORAN KAS KELUAR</a></p>
+<p style="text-align:center"><a href="jurnal_keluar_masuk.php" target="_blank">JURNAL KELUAR MASUK</a></p>
 
 <p>&nbsp;</p>
 

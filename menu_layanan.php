@@ -9,17 +9,17 @@
 <body>
 <body style="background-color: #999991">
 <h1>
-<p style="text-align:center">Layanan Perbankan</p>
+<p style="text-align:center">LAYANAN PERBANKAN</p>
 </h1>
 
 
 
 <p>&nbsp;</p>
-<p style="text-align:center">1. <a href="master_nasabah.php" target="_blank">Buka Rekening</a></p>
-<p style="text-align:center">2. <a href="mutasi_masuk.php" target="_blank">Mutasi Masuk</a></p>
-<p style="text-align:center">3. <a href="mutasi_keluar.php" target="_blank">Mutasi Keluar</a></p>
-<p style="text-align:center">4. <a href="mutasi_transfer.php" target="_blank">Transfer</a></p>
-<p style="text-align:center">5. <a href="cari_transaksi.php" target="_blank">Cari Transaksi</a></p>
+<p style="text-align:center"><a href="master_nasabah.php" target="_blank">BUKA REKENING</a></p>
+<p style="text-align:center"><a href="mutasi_masuk.php" target="_blank">MUTASI MASUK</a></p>
+<p style="text-align:center"><a href="mutasi_keluar.php" target="_blank">MUTASI KELUAR</a></p>
+<p style="text-align:center"><a href="mutasi_transfer.php" target="_blank">TRANSFER</a></p>
+<p style="text-align:center"><a href="cari_transaksi.php" target="_blank">CARI TRANSAKSI</a></p>
 
 
 </body>

@@ -20,19 +20,20 @@
 
 <body style="background-color: #999991">
 <h1>
-<p style="text-align:center">Master Kode Transaksi</p>
+<p style="text-align:center">MASTER KODE TRANSAKSI</p>
 </h1>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <form action="" method="post">
-	Kode Transaksi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	KODE TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input name="TextKodeTransaksi" style="width: 150px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	
 	<br />
 	<br />
-	Ket Transaksi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input name="TextKetTransaksi" style="height: 21px; width: 311px" type="text" /><br />
+	KET TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	
+	<input name="TextKetTransaksi" style="height: 21px; width: 415px" type="text" /><br />
 	<br />
-	Neraca &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	NERACA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 	<select name="SelectJenisNeraca" style="width: 114px">
 	<option>Debet</option>
 	<option>Kredit</option>
@@ -40,7 +41,7 @@
 
 	</select><br />
 	<br />
-	<input name="ButtonSave" type="submit" value="Simpan Data" />
+	<input name="ButtonSave" type="submit" value="SAVE" />
 <br />
 </form>
 

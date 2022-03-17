@@ -17,12 +17,12 @@
 
 <body style="background-color: #999993">
 <h1>
-<p style="text-align:center">Cari Transaksi</p>
+<p style="text-align:center">CARI TRANSAKSI</p>
 </h1>
 <p>&nbsp;</p>
 
 <form method="post" action="">
-Masukan Id Transaksi&nbsp;&nbsp;&nbsp;  
+MASUKAN ID TRANSAKSI&nbsp;&nbsp;&nbsp;  
 <input name="id_transaksi" type="text" style="width: 260px" />
 
 <!--
