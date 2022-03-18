@@ -152,6 +152,18 @@ if(isset($_POST["ButtonSave"]))
 					$no_tlp_nasabah=$row['no_tlp_nasabah'];
 					
 				}
+				//get nama program//
+				if($jenis_program){
+					$get_nama_program = mysqli_query($koneksi2,"select * from master_tabungan where kode_tabungan = '$jenis_program'");
+					if(count($get_nama_program)>0){
+						while ($row1 = $get_nama_program ->fetch_assoc())  {
+							$jenis_program = $row1['nama_tabungan'];		
+						}
+
+					}
+				}
+				//get nama program end//
+
 				while ( $row2 = $total_query->fetch_assoc())  {
 					$total=$row2['kas_masuk'];
 				}
