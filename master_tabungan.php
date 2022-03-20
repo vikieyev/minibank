@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<link rel="icon" href="bankicon.pngwing.com.png" type="image/icon type">
+
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Program</title>

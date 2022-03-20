@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<link rel="icon" href="bankicon.pngwing.com.png" type="image/icon type">
+
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -131,7 +133,7 @@ if(isset($_POST["ButtonSave"]))
 	
 		
 			$total_query = mysqli_query($koneksi2,"select sum(a.debet) as 'kas_keluar' from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");
-			$input = mysqli_query($koneksi2,"select a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.debet,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and debet > 0 and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir');");    
+			$input = mysqli_query($koneksi2,"select a.no_rek,c.nama_nasabah,c.alamat_nasabah ,c.no_tlp_nasabah,c.jenis_program ,b.kode_transaksi ,a.debet,a.tgl_transaksi,a.id_transaksi,b.ket_transaksi from data_transaksi a join data_jenis_trx b on a.jenis_transaksi = b.kode_transaksi join master_nasabah c on c.kode_nasabah = a.no_rek where a.no_rek  = '$no_rek' and debet > 0 and (b.jenis_neraca = 'debet' or b.jenis_neraca = 'transfer') and (a.tgl_transaksi between '$tgl_awal' and '$tgl_akhir')order by a.id_transaksi asc;");    
 			
 			//jika query input sukses
 			$nama_nasabah = "";
@@ -185,7 +187,8 @@ if(isset($_POST["ButtonSave"]))
 
 					//Print array in JSON format
 					$json_data2 = json_encode($dbdata);
-					
+					echo '<button onclick="window.print();">';
+
 					echo '<div id="jsGrid"></div>';
 					//echo $json_data2;
 					//echo '<br/>';
