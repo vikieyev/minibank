@@ -9,6 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 <link href="style_master_tabungan.css" rel="stylesheet" />
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
@@ -23,30 +28,44 @@
 </h1>
 <p>&nbsp;</p>
 
-<form method="post" action="">
-	REK NASABAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	<?php
+<form method="post" class="w-full" action="">
+<div class="p-3">
+	<div class="md:flex md:items-center mb-6">
+		<div class="md:w-1/8">
+			<label class="block text-black-500 font-regular md:text-right mb-1 md:mb-0 pr-4"
+	               for="grid-state">
+	            REK NASABAH
+	        </label>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="md:w-1/4">
+			<?php
 
-		//load data ke select
-		 //Including dbconfig file.
-		include 'koneksi.php';
-		$result = $koneksi2->query("SELECT * FROM master_nasabah");
+				//load data ke select
+				 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("SELECT * FROM master_nasabah");
+				
+				//Initialize array variable
+				  $dbdata = array();
+				
+				echo '<select  name="select_nasabah" id="grid-state" class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-1 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey">';
+				while( $row = $result->fetch_assoc())
+				{
+					    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
+				        . htmlspecialchars($row['kode_nasabah']) 
+				        . '</option>';
+				}
+				echo '</select>';
+				//echo '<input name="nama_nasabah" type="text">';
+				//echo '</input>';
+			?>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="md:w-1/2">
+		<input name="ButtonCeksaldoAsal" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Cek Saldo" />
 		
-		//Initialize array variable
-		  $dbdata = array();
-		
-		echo '<select name="select_nasabah">';
-		while( $row = $result->fetch_assoc())
-		{
-			    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
-		        . htmlspecialchars($row['kode_nasabah']) 
-		        . '</option>';
-		}
-		echo '</select>';
-		//echo '<input name="nama_nasabah" type="text">';
-		//echo '</input>';
-	?>
-	<input name="ButtonCeksaldoAsal" type="submit" value="Cek Saldo" />
+
 	<?php
 	if(isset($_POST["ButtonCeksaldoAsal"]))
 	{
@@ -70,63 +89,91 @@
 
 	}	
 	?>
-	<br />
-	<br />
-	KODE TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<?php
+	</div>
+	</div>
 
-		//load data ke select
-		 //Including dbconfig file.
-		include 'koneksi.php';
-		$result = $koneksi2->query("SELECT * FROM data_jenis_trx where jenis_neraca = 'transfer' ");
-		
-		//Initialize array variable
-		  $dbdata = array();
-		
-		echo '<select name="select_kode_transaksi">';
-		while( $row = $result->fetch_assoc())
-		{
-			    echo '<option value="' . htmlspecialchars($row['kode_transaksi']) . '">' 
-		        . htmlspecialchars($row['ket_transaksi']) 
-		        . '</option>';
-		}
-		echo '</select>';
-	?>
+	<div class="md:flex md:items-center mb-6">
+		<div class="md:w-1/8">
+			<label class="block text-black-500 font-regular md:text-left mb-1 md:mb-0 pr-4"
+		               for="grid-state1">
+		            KODE TRANSAKSI
+		        </label>
+		 </div>
+	 	<div class="md:w-1/4">
+			<?php
 
-	<br />
-	<br />
-	NOMINAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	
-	<input name="nominal" type="number" style="width: 216px"/><br />
-	<br />
-	TGL TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_transaksi" name="tgl_transaksi" value='<?php echo date('Y-m-d');?>' />
-	<br />
+				//load data ke select
+				 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("SELECT * FROM data_jenis_trx where jenis_neraca = 'transfer' ");
+				
+				//Initialize array variable
+				  $dbdata = array();
+				
+				echo '<select name="select_kode_transaksi" id="grid-state1" class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-1 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey">';
+				while( $row = $result->fetch_assoc())
+				{
+					    echo '<option value="' . htmlspecialchars($row['kode_transaksi']) . '">' 
+				        . htmlspecialchars($row['ket_transaksi']) 
+				        . '</option>';
+				}
+				echo '</select>';
+			?>
+		</div>
+	</div>
+	
+	<div class="md:flex md:items-center mb-6">
+		<div class="md:w-1/8">
+			<label class="block text-black-500 font-regular md:text-left mb-1 md:mb-0 pr-4"
+		               for="grid-state2">
+		            NOMINAL
+		        </label>
+		 </div>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input name="nominal" type="number" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 216px"/><br />
+	</div>
+
+	TGL TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_transaksi" name="tgl_transaksi" value='<?php echo date('Y-m-d');?>' />
 	<br />
 	
-	REK TUJUAN&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
-	
-	<?php
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+	<div class="md:flex md:items-center mb-6">
+		<div class="md:w-1/8">
+			<label class="block text-black-500 font-regular md:text-right mb-1 md:mb-0 pr-4"
+	               for="grid-state">
+	            REK TUJUAN
+	        </label>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="md:w-1/4">
+			<?php
 
-		//load data ke select
-		 //Including dbconfig file.
-		include 'koneksi.php';
-		$result = $koneksi2->query("SELECT * FROM master_nasabah");
-		
-		//Initialize array variable
-		  $dbdata = array();
-		
-		echo '<select name="select_nasabah_tujuan">';
-		while( $row = $result->fetch_assoc())
-		{
-			    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
-		        . htmlspecialchars($row['kode_nasabah']) 
-		        . '</option>';
-		}
-		echo '</select>';
-		//echo '<input name="nama_nasabah" type="text">';
-		//echo '</input>';
-	?>
+				//load data ke select
+				 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("SELECT * FROM master_nasabah");
+				
+				//Initialize array variable
+				  $dbdata = array();
+				
+				echo '<select  name="select_nasabah_tujuan" id="grid-state" class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-1 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey">';
+				while( $row = $result->fetch_assoc())
+				{
+					    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
+				        . htmlspecialchars($row['kode_nasabah']) 
+				        . '</option>';
+				}
+				echo '</select>';
+				//echo '<input name="nama_nasabah" type="text">';
+				//echo '</input>';
+			?>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="md:w-1/2">
+		<input name="ButtonCeksaldoTujuan" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Cek Saldo" />
 	
-	<input name="ButtonCeksaldoTujuan" type="submit" value="Cek Saldo" />
+	
+	
 	<?php
 	if(isset($_POST["ButtonCeksaldoTujuan"]))
 	{
@@ -150,11 +197,13 @@
 
 	}	
 	?>
+</div>
+</div>
 
-
-	<br/>
-		<br />
-	<input name="ButtonSave" type="submit" value="SAVE" /> </form>
+	
+	<input name="ButtonSave" type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" value="SAVE" /> 
+</div>
+</form>
 	<br />
 
 </body>

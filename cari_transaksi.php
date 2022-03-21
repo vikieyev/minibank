@@ -9,7 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 <link href="style_master_tabungan.css" rel="stylesheet" />
-
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
@@ -17,15 +21,24 @@
 <title>Cari Transaksi</title>
 </head>
 
-<body style="background-color: #999993">
+<body style="background-color: #999991">
 <h1>
 <p style="text-align:center">CARI TRANSAKSI</p>
 </h1>
 <p>&nbsp;</p>
 
-<form method="post" action="">
-MASUKAN ID TRANSAKSI&nbsp;&nbsp;&nbsp;  
-<input name="id_transaksi" type="text" style="width: 260px" />
+<form method="post" class="w-full" action="">
+
+
+<div class="md:flex md:items-center mb-6">
+	<div class="md:w-1/8">
+	    <label class="block text-black-500 font-regular md:text-right mb-1 md:mb-0 pr-4"
+	           for="inline-full-name">
+	        MASUKAN ID TRANSAKSI
+	    </label>
+	</div>
+
+		<input name="id_transaksi" id="inline-full-name" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" type="text" style="width: 260px" />
 
 <!--
 	Rek nasabah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -161,7 +174,8 @@ MASUKAN ID TRANSAKSI&nbsp;&nbsp;&nbsp;
 		
 	&nbsp;&nbsp;&nbsp;
 		
-	<input name="ButtonSave" type="submit" value="CARI" /> </form>
+	<input name="ButtonSave" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="CARI" /> </form>
+</div>
 	<br />
 
 </body>

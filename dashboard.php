@@ -7,10 +7,15 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <meta http-equiv="refresh" content="60" />
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-
+<!--
 <link href="style_master_tabungan.css" rel="stylesheet" />
-
+-->
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
@@ -19,126 +24,177 @@
 </head>
 
 <body style="background-color: #999993">
+<!--
 <h1>
 <p style="text-align:center">Dashboard Minibank</p>
 </h1>
+-->
+ <!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                    <h1 class="text-white p-2">Dashboard Minibank</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+
+
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                    
+                       
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
 <p>&nbsp;</p>
-<h3>
-<p style="text-align:center">JUMLAH NASABAH</p>
-</h3>
-<h1>
-<?php
- //Including dbconfig file.
-	include 'koneksi.php';
-	$result = $koneksi2->query("select count(kode_nasabah) as 'jumlah_nasabah' from master_nasabah");
-	
-	//Initialize array variable
-	  $dbdata = array();
-		$jumlah_nasabah = 0;
-	//Fetch into associative array
-	  while ( $row = $result->fetch_assoc())  {
-			$jumlah_nasabah=$row['jumlah_nasabah'];
 
-		}
-	echo '<p style="text-align:center">';
-	echo $jumlah_nasabah;
-	echo '</p>';
-?>
-</h1>
-</br>
-<h3>
-<p style="text-align:center">TOTAL DEBET</p>
-</h3>
-<h1>
-<?php
- //Including dbconfig file.
-	include 'koneksi.php';
-	$result = $koneksi2->query("select ifnull(sum(debet),0) as total_debet  from data_transaksi");
-	
-	//Initialize array variable
-	  $dbdata = array();
-		$total_debet = 0;
-	//Fetch into associative array
-	  while ( $row = $result->fetch_assoc())  {
-			$total_debet=$row['total_debet'];
 
-		}
-	echo '<p style="text-align:center">';
-	echo 'Rp. ' .number_format($total_debet);
-	echo '</p>';
-?>
-</h1>
-</br>
-<h3>
-<p style="text-align:center">TOTAL KREDIT</p>
-</h3>
-<h1>
-<?php
- //Including dbconfig file.
-	include 'koneksi.php';
-	$result = $koneksi2->query("select ifnull(sum(kredit),0) as total_kredit  from data_transaksi");
-	
-	//Initialize array variable
-	  $dbdata = array();
-		$total_kredit = 0;
-	//Fetch into associative array
-	  while ( $row = $result->fetch_assoc())  {
-			$total_kredit=$row['total_kredit'];
+	<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+		<div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
+			<h3>
+			<p style="text-align:center">JUMLAH NASABAH</p>
+			</h3>
+			<h1>
+				
+					<?php
+					 //Including dbconfig file.
+						include 'koneksi.php';
+						$result = $koneksi2->query("select count(kode_nasabah) as 'jumlah_nasabah' from master_nasabah");
+						
+						//Initialize array variable
+						  $dbdata = array();
+							$jumlah_nasabah = 0;
+						//Fetch into associative array
+						  while ( $row = $result->fetch_assoc())  {
+								$jumlah_nasabah=$row['jumlah_nasabah'];
 
-		}
-	echo '<p style="text-align:center">';
-	echo 'Rp. ' .number_format($total_kredit);
-	echo '</p>';
-?>
-</h1>
+							}
+						echo '<p style="text-align:center">';
+						echo $jumlah_nasabah;
+						echo '</p>';
+					?>
+
+			</h1>
+		</div>
+	</div>
 
 </br>
-<h3>
-<p style="text-align:center">TOTAL SALDO</p>
-</h3>
-<h1>
-<?php
- //Including dbconfig file.
-	include 'koneksi.php';
-	$result = $koneksi2->query("select (ifnull(sum(kredit) - sum(debet),0)) as 'total_saldo'  from data_transaksi");
-	
-	//Initialize array variable
-	  $dbdata = array();
-		$total_saldo = 0;
-	//Fetch into associative array
-	  while ( $row = $result->fetch_assoc())  {
-			$total_saldo=$row['total_saldo'];
 
-		}
-	echo '<p style="text-align:center">';
-	echo 'Rp. ' .number_format($total_saldo);
-	echo '</p>';
-?>
-</h1>
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+		<div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+			<h3>
+			<p style="text-align:center">TOTAL DEBET</p>
+			</h3>
+			<h1>
+			<?php
+			 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("select ifnull(sum(debet),0) as total_debet  from data_transaksi");
+				
+				//Initialize array variable
+				  $dbdata = array();
+					$total_debet = 0;
+				//Fetch into associative array
+				  while ( $row = $result->fetch_assoc())  {
+						$total_debet=$row['total_debet'];
+
+					}
+				echo '<p style="text-align:center">';
+				echo 'Rp. ' .number_format($total_debet);
+				echo '</p>';
+			?>
+			</h1>
+		</div>
+</div>
 
 </br>
-<h3>
-<p style="text-align:center">TOTAL TRANSAKSI</p>
-</h3>
-<h1>
-<?php
- //Including dbconfig file.
-	include 'koneksi.php';
-	$result = $koneksi2->query("select count(id_transaksi) as 'total_transaksi' from data_transaksi");
-	
-	//Initialize array variable
-	  $dbdata = array();
-		$total_transaksi = 0;
-	//Fetch into associative array
-	  while ( $row = $result->fetch_assoc())  {
-			$total_transaksi=$row['total_transaksi'];
 
-		}
-	echo '<p style="text-align:center">';
-	echo $total_transaksi;
-	echo '</p>';
-?>
-</h1>
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+		<div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
+			<h3>
+			<p style="text-align:center">TOTAL KREDIT</p>
+			</h3>
+			<h1>
+			<?php
+			 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("select ifnull(sum(kredit),0) as total_kredit  from data_transaksi");
+				
+				//Initialize array variable
+				  $dbdata = array();
+					$total_kredit = 0;
+				//Fetch into associative array
+				  while ( $row = $result->fetch_assoc())  {
+						$total_kredit=$row['total_kredit'];
+
+					}
+				echo '<p style="text-align:center">';
+				echo 'Rp. ' .number_format($total_kredit);
+				echo '</p>';
+			?>
+			</h1>
+		</div>
+</div>
+
+</br>
+
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+		<div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
+			<h3>
+			<p style="text-align:center">TOTAL SALDO</p>
+			</h3>
+			<h1>
+			<?php
+			 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("select (ifnull(sum(kredit) - sum(debet),0)) as 'total_saldo'  from data_transaksi");
+				
+				//Initialize array variable
+				  $dbdata = array();
+					$total_saldo = 0;
+				//Fetch into associative array
+				  while ( $row = $result->fetch_assoc())  {
+						$total_saldo=$row['total_saldo'];
+
+					}
+				echo '<p style="text-align:center">';
+				echo 'Rp. ' .number_format($total_saldo);
+				echo '</p>';
+			?>
+			</h1>
+		</div>
+</div>
+
+</br>
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+		<div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
+			<h3>
+			<p style="text-align:center">TOTAL TRANSAKSI</p>
+			</h3>
+			<h1>
+			<?php
+			 //Including dbconfig file.
+				include 'koneksi.php';
+				$result = $koneksi2->query("select count(id_transaksi) as 'total_transaksi' from data_transaksi");
+				
+				//Initialize array variable
+				  $dbdata = array();
+					$total_transaksi = 0;
+				//Fetch into associative array
+				  while ( $row = $result->fetch_assoc())  {
+						$total_transaksi=$row['total_transaksi'];
+
+					}
+				echo '<p style="text-align:center">';
+				echo $total_transaksi;
+				echo '</p>';
+			?>
+			</h1>
+		</div>
+</div>
 
 
 

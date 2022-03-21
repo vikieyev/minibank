@@ -3,8 +3,14 @@
 
 <head>
 <meta content="en-us" http-equiv="Content-Language" />
+ 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="icon" href="bankicon.pngwing.com.png" type="image/icon type">
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 <title>MINI BANK</title>
 
 </head>
@@ -12,17 +18,68 @@
 <body>
 
 <body style="background-color: #999991">
+<!---
 <h1>
-<p style="text-align:center">Mini Bank v.1.0</p>
+<p style="text-align:center"></p>
 </h1>
 <p>&nbsp;</p>
-<p style="text-align:center"><a href="dashboard.php" target="_blank">DASHBOARD</a></p>
-<p style="text-align:center"><a href="menu.php" target="_blank">MASTER DATA</a></p>
-<p style="text-align:center"><a href="menu_layanan.php" target="_blank">LAYANAN PERBANKAN</a></p>
-<p style="text-align:center"><a href="menu_laporan.php" target="_blank">LAPORAN</a></p>
+--->
+ <!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                    <h1 class="text-white p-2">Mini Bank v.1.0</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    <!--
+                    <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
 
+
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">User</a>
+                    <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
+                        <ul class="list-reset">
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
+                          <li><hr class="border-t mx-2 border-grey-ligght"></li>
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
+                        </ul>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+
+<div class="flex flex-1">
+	<aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+		<ul class="list-reset flex flex-col">
+			 <li class="w-full h-full py-3 px-2 border-b border-light-border">
+				<i class="fas fa-tachometer-alt float-left mx-2"></i>
+					<p style="text-align:center"><a href="dashboard.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">DASHBOARD</a></p>
+				
+			</li>
+            <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                <i class="fab fa-wpforms float-left mx-2"></i>
+			     <p style="text-align:center"><a href="menu.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">MASTER DATA</a></p>
+            </li>
+            <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                <i class="fas fa-table float-left mx-2"></i>
+			         <p style="text-align:center"><a href="menu_layanan.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">LAYANAN PERBANKAN</a></p>
+            </li>
+            <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                <i class="far fa-file float-left mx-2"></i>
+			         <p style="text-align:center"><a href="menu_laporan.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">LAPORAN</a></p>
+            </li>
+		</ul>
+
+    </aside>
+</div>
 <p>&nbsp;</p>
 
-</body>
 
+</body>
+<script src="main.js"></script>
 </html>
