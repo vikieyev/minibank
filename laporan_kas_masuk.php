@@ -8,7 +8,14 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
+
 <link href="style_master_tabungan.css" rel="stylesheet" />
+
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
@@ -20,13 +27,32 @@
 </head>
 
 <body style="background-color: #999991">
+	<!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    
+                    <h1 class="text-white p-2">LAPORAN KAS MASUK</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+<!--
 <h1>
 <p style="text-align:center">LAPORAN KAS MASUK</p>
 </h1>
+-->
+
 <div class="no-print">
 
 <form method="post" action="">
-	REK NASABAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<div class="p-3">
+	REK NASABAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 	<?php
 
 		//load data ke select
@@ -37,7 +63,7 @@
 		//Initialize array variable
 		  $dbdata = array();
 		
-		echo '<select name="select_nasabah" >';
+		echo '<select name="select_nasabah" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px">';
 		while( $row = $result->fetch_assoc())
 		{
 			    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
@@ -48,8 +74,11 @@
 		//echo '<input name="nama_nasabah" type="text">';
 		//echo '</input>';
 	?>
+
 	
+	<!--
 	<input name="ButtonCeksaldoAsal" type="submit" value="Cek Saldo" />
+-->
 	<?php
 	if(isset($_POST["ButtonCeksaldoAsal"]))
 	{
@@ -75,11 +104,12 @@
 	?>
 
 
-			&nbsp;&nbsp;&nbsp;
+			
 
 
-			TGL AWAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_awal" name="tgl_awal" value='<?php echo date('Y-m-d');?>' />&nbsp;&nbsp;&nbsp;&nbsp;
-			TGL AKHIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_akhir" name="tgl_akhir" value='<?php echo date('Y-m-d');?>' />
+			TGL AWAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_awal" name="tgl_awal" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px" value='<?php echo date('Y-m-d');?>' />&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			TGL AKHIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="tgl_akhir" name="tgl_akhir" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px" value='<?php echo date('Y-m-d');?>' />
 	
 	<!--
 	Rek Tujuan&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
@@ -110,15 +140,13 @@
 	
 			&nbsp;&nbsp;&nbsp;
 	
-			<input name="ButtonSave" type="submit" value="PROSES" /> 
+			<input name="ButtonSave" type="submit" value="PROSES" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" /> 
+		</div>
 </form>
 </div>
-	<br />
-
-
-
+	
 </body>
-
+<div class="p-3">
 <?php
 
 // save data //
@@ -219,7 +247,7 @@ if(isset($_POST["ButtonSave"]))
 }
 
 ?>
-
+</div>
 
 <?php
 

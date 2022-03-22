@@ -7,8 +7,9 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-
+<!--
 <link href="style_master_tabungan.css" rel="stylesheet" />
+-->
 <!-- Css -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/styles.css">
@@ -22,11 +23,31 @@
 </head>
 
 <body style="background-color: #999991">
+
+<!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    
+                    <h1 class="text-white p-2">CARI TRANSAKSI</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+
+
+<!--
 <h1>
 <p style="text-align:center">CARI TRANSAKSI</p>
 </h1>
 <p>&nbsp;</p>
-
+-->
+</br>
 <form method="post" class="w-full" action="">
 
 

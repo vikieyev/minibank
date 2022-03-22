@@ -10,6 +10,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 <link href="style_master_tabungan.css" rel="stylesheet" />
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
@@ -21,22 +26,41 @@
 <body>
 
 <body style="background-color: #999991">
+<!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    
+                    <h1 class="text-white p-2">MASTER PROGRAM</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+<!--
 <h1>
 <p style="text-align:center">MASTER PROGRAM</p>
 </h1>
+-->
 <p>&nbsp;</p>
 <form action="" method="post">
+<div class="p-3">
 	KODE PROGRAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-	<input name="TextKodeTabungan" style="width: 150px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input name="TextKodeTabungan" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 150px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	
 	<br />
 	<br />
-	NAMA PROGRAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 	<input name="TextNamaTabungan" style="height: 21px; width: 311px" type="text" /><br />
+	NAMA PROGRAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 	<input name="TextNamaTabungan" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="height: 30px; width: 311px" type="text" /><br />
 	<br />
-	MIN. SETORAN AWAL&nbsp; &nbsp;<input name="TextSetoranMinimal" style="width: 213px" type="number" /><br />
+	MIN. SETORAN AWAL&nbsp; &nbsp;<input name="TextSetoranMinimal" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 213px" type="number" /><br />
 	<br />
-	<input name="ButtonSave" type="submit" value="SAVE" />
+	<input name="ButtonSave" type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" value="SAVE" />
 <br />
+</div>
 </form>
 
 <?php
@@ -62,7 +86,7 @@ echo '</select>';
 
 
 
-
+</br>
 
 </body>
 

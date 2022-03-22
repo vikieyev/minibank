@@ -8,7 +8,14 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
+<!--
 <link href="style_master_tabungan.css" rel="stylesheet" />
+-->
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
@@ -18,10 +25,29 @@
 </head>
 
 <body style="background-color: #999991">
+<!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    
+                    <h1 class="text-white p-2">MUTASI MASUK</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+<!--
 <h1>
 <p style="text-align:center">MUTASI MASUK</p>
 </h1>
+-->
+</br>
 <form method="post" action="">
+<div class="p-3">
 	REK NASABAH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 	&nbsp;&nbsp; 
 	<?php
@@ -34,7 +60,7 @@
 		//Initialize array variable
 		  $dbdata = array();
 		
-		echo '<select name="select_nasabah">';
+		echo '<select name="select_nasabah" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px">';
 		while( $row = $result->fetch_assoc())
 		{
 			    echo '<option value="' . htmlspecialchars($row['kode_nasabah']) . '">' 
@@ -48,7 +74,7 @@
 	
 	&nbsp;&nbsp;&nbsp;
 	
-	<input name="ButtonCeksaldoAsal" type="submit" value="Cek Saldo" />
+	<input name="ButtonCeksaldoAsal" type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" value="Cek Saldo" />
 	<?php
 	if(isset($_POST["ButtonCeksaldoAsal"]))
 	{
@@ -87,7 +113,7 @@
 		//Initialize array variable
 		  $dbdata = array();
 		
-		echo '<select name="select_kode_transaksi">';
+		echo '<select name="select_kode_transaksi" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px" >';
 		while( $row = $result->fetch_assoc())
 		{
 			    echo '<option value="' . htmlspecialchars($row['kode_transaksi']) . '">' 
@@ -100,9 +126,9 @@
 	<br />
 	<br />
 	NOMINAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	
-	<input name="nominal" type="number" style="width: 216px"/><br />
+	<input name="nominal" type="number" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-1/4 py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 216px"/><br />
 	<br />
-	TGL TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" id="tgl_transaksi" name="tgl_transaksi" value='<?php echo date('Y-m-d');?>' />
+	TGL TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 200px" type="date" id="tgl_transaksi" name="tgl_transaksi" value='<?php echo date('Y-m-d');?>' />
 	<br />
 	<br />
 	<!--
@@ -133,7 +159,9 @@
 	-->
 	
 		<br />
-	<input name="ButtonSave" type="submit" value="SAVE" /> </form>
+	<input name="ButtonSave" type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" value="SAVE" />
+	</div> 
+</form>
 	<br />
 
 </body>

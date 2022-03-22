@@ -10,6 +10,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 <link href="style_master_tabungan.css" rel="stylesheet" />
+<!-- Css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
 
 <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
 
@@ -21,30 +26,50 @@
 <body>
 
 <body style="background-color: #999991">
+	<!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    
+                    <h1 class="text-white p-2">MASTER KODE TRANSAKSI</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                   
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="bankicon.pngwing.com.png" alt="">
+                    
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+<!--
 <h1>
 <p style="text-align:center">MASTER KODE TRANSAKSI</p>
 </h1>
+-->
+
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <form action="" method="post">
+	<div class="p-3">
 	KODE TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input name="TextKodeTransaksi" style="width: 150px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input name="TextKodeTransaksi" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 150px" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	
 	<br />
 	<br />
 	KET TRANSAKSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	
-	<input name="TextKetTransaksi" style="height: 21px; width: 415px" type="text" /><br />
+	<input name="TextKetTransaksi" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="height: 30px; width: 415px" type="text" /><br />
 	<br />
 	NERACA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-	<select name="SelectJenisNeraca" style="width: 114px">
+	<select name="SelectJenisNeraca" class="bg-grey-200 appearance-none border-1 border-grey-200 rounded w-full py-1 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple-light" style="width: 114px">
 	<option>Debet</option>
 	<option>Kredit</option>
 	<option>Transfer</option>
 
 	</select><br />
 	<br />
-	<input name="ButtonSave" type="submit" value="SAVE" />
+	<input name="ButtonSave" type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" value="SAVE" />
 <br />
+</div>
 </form>
 
 
