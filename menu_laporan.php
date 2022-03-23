@@ -44,15 +44,15 @@
 		<ul class="list-reset flex flex-col">
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			    <i class="far fa-file float-left mx-2"></i>
-					<p style="text-align:center"><a href="laporan_kas_masuk.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">LAPORAN KAS MASUK</a></p>
+					<p style="text-align:center"><a href="laporan_kas_masuk.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">LAPORAN KAS MASUK</a></p>
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			    <i class="far fa-file float-left mx-2"></i>
-					<p style="text-align:center"><a href="laporan_kas_keluar.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">LAPORAN KAS KELUAR</a></p>
+					<p style="text-align:center"><a href="laporan_kas_keluar.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">LAPORAN KAS KELUAR</a></p>
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			    <i class="far fa-file float-left mx-2"></i>
-					<p style="text-align:center"><a href="jurnal_keluar_masuk.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">JURNAL KELUAR MASUK</a></p>
+					<p style="text-align:center"><a href="jurnal_keluar_masuk.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">JURNAL KELUAR MASUK</a></p>
 			</li>
 
 		</ul>

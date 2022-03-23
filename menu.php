@@ -46,17 +46,17 @@
 
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			                <i class="fab fa-wpforms float-left mx-2"></i>
-								<p style="text-align:center"><a href="master_nasabah.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">NASABAH</a></p>
+								<p style="text-align:center"><a href="master_nasabah.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">NASABAH</a></p>
 			 </li>
 
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			                <i class="fab fa-wpforms float-left mx-2"></i>		
-								<p style="text-align:center"><a href="master_tabungan.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">JENIS PROGRAM</a></p>
+								<p style="text-align:center"><a href="master_tabungan.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">JENIS PROGRAM</a></p>
 			</li>
 
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
 			                <i class="fab fa-wpforms float-left mx-2"></i>
-								<p style="text-align:center"><a href="kode_transaksi.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">KODE TRANSAKSI</a></p>
+								<p style="text-align:center"><a href="kode_transaksi.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">KODE TRANSAKSI</a></p>
 			</li>
 
 		</ul>

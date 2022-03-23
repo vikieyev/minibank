@@ -42,24 +42,24 @@
 		<ul class="list-reset flex flex-col">
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
                 <i class="fas fa-table float-left mx-2"></i>
-					<p style="text-align:center"><a href="master_nasabah.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">BUKA REKENING</a></p>
+					<p style="text-align:center"><a href="master_nasabah.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">BUKA REKENING</a></p>
 			
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
                 <i class="fas fa-table float-left mx-2"></i>
-					<p style="text-align:center"><a href="mutasi_masuk.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">MUTASI MASUK</a></p>
+					<p style="text-align:center"><a href="mutasi_masuk.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">MUTASI MASUK</a></p>
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
                 <i class="fas fa-table float-left mx-2"></i>					
-					<p style="text-align:center"><a href="mutasi_keluar.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">MUTASI KELUAR</a></p>
+					<p style="text-align:center"><a href="mutasi_keluar.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">MUTASI KELUAR</a></p>
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
                 <i class="fas fa-table float-left mx-2"></i>		
-					<p style="text-align:center"><a href="mutasi_transfer.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">TRANSFER</a></p>
+					<p style="text-align:center"><a href="mutasi_transfer.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">TRANSFER</a></p>
 			</li>
 			<li class="w-full h-full py-3 px-2 border-b border-light-border">
                 <i class="fas fa-table float-left mx-2"></i>
-					<p style="text-align:center"><a href="cari_transaksi.php" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" target="_blank">CARI TRANSAKSI</a></p>
+					<p style="text-align:center"><a href="cari_transaksi.php" class="font-sans font-normal hover:font-bold text-sm text-nav-item no-underline" target="_blank">CARI TRANSAKSI</a></p>
 			</li>
 		</ul>
     </aside>

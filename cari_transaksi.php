@@ -7,9 +7,9 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-<!--
+
 <link href="style_master_tabungan.css" rel="stylesheet" />
--->
+
 <!-- Css -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/styles.css">
@@ -49,7 +49,7 @@
 -->
 </br>
 <form method="post" class="w-full" action="">
-
+<div class="p-3">
 
 <div class="md:flex md:items-center mb-6">
 	<div class="md:w-1/8">
@@ -194,7 +194,7 @@
 -->
 		
 	&nbsp;&nbsp;&nbsp;
-		
+	</div>
 	<input name="ButtonSave" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="CARI" /> </form>
 </div>
 	<br />
