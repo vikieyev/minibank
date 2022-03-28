@@ -3,7 +3,7 @@
 
 <head>
 <link rel="icon" href="bankicon.pngwing.com.png" type="image/icon type">
-
+<link href="style_master_tabungan.css" rel="stylesheet" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- Css -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -10,15 +10,29 @@ html {
     height: 100%;
 }
 
+header {
+  position: sticky;
+  top: 0;
+}
 
 
 body {
     height: 100%;
     padding: 0px;
     color: #262626;
+    //text-shadow: -0.3px -0.3px 0 #255, 0.3px -0.3px 0 #255, -0.3px 0.3px 0 #255, 0.3px 0.3px 0 #255;
+    //color: #2F4F4F;
     font-family: 'Helvetica Neue Light', 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif, Arial;
     font-size: 15px;
     font-weight: 500;
+    background-image: url("wallpaperflare.com_wallpaper.jpg");
+    background-color: #cccccc;
+    /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 h1 {

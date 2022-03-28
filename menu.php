@@ -4,6 +4,7 @@
 <head>
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="style_master_tabungan.css" rel="stylesheet" />
 <!-- Css -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/styles.css">
